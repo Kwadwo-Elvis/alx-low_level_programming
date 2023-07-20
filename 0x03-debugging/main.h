@@ -1,16 +1,11 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/* Include standard I/O library for printf function */
 #include <stdio.h>
 
-/* Function prototypes */
-
-/**
- * positive_or_negative - Prints if an integer is positive, negative, or zero
- * @i: The integer to be checked
- */
 void positive_or_negative(int i);
+int largest_number(int a, int b, int c);
+int convert_day(int month, int day, int year);
+void print_remaining_days(int month, int day, int year);
 
-#endif /* MAIN_H */
-
+#endif
