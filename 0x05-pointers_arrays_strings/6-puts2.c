@@ -1,31 +1,29 @@
 #include "main.h"
-
 /**
- * _putchar - Writes a character to the standard output (stdout).
- * @c: The character to be written.
- *
- * Return: On success, the character written.
- * On error, -1 is returned.
- */
-int _putchar(char c)
-{
-	return write(1, &c, 1);
-}
-
-/**
- * puts2 - Prints every other character of a string.
- * @str: The input string.
- *
- * Return: void.
+ * puts2 - function should print only one character out of two
+ * starting with the first one
+ * @str: input
+ * Return: print
  */
 void puts2(char *str)
 {
-	int i = 0;
+	int longi = 0;
+	int t = 0;
+	char *y = str;
+	int o;
 
-	while (str[i] != '\0')
+	while (*y != '\0')
 	{
-		_putchar(str[i]);
-		i += 2;
+		y++;
+		longi++;
+	}
+	t = longi - 1;
+	for (o = 0 ; o <= t ; o++)
+	{
+		if (o % 2 == 0)
+	{
+		_putchar(str[o]);
+	}
 	}
 	_putchar('\n');
 }
