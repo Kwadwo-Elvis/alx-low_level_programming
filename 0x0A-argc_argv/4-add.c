@@ -27,7 +27,7 @@ int check_num(char *str)
 /**
  * main - entry point
  * @argc: number of arguments
- * @argv: array containing arguments
+ * @argv: array of arguments
  *
  * Return: 0 (Success), 1 (Error)
  */
