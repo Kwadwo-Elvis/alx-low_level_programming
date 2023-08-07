@@ -4,16 +4,14 @@
 #include <string.h>
 
 /**
- * check_num - check if string contains digits
- * @str: string to check
+ * check_num - check if a string contains only digits
+ * @str: the string to check
  *
- * Return: 1 if string contains digits, 0 otherwise
+ * Return: 1 if all characters are digits, 0 otherwise
  */
 int check_num(char *str)
 {
-	unsigned int count;
-
-	count = 0;
+	unsigned int count = 0;
 
 	while (count < strlen(str))
 	{
@@ -23,40 +21,38 @@ int check_num(char *str)
 		}
 		count++;
 	}
-
 	return (1);
 }
 
 /**
- * main - adds positive numbers
+ * main - entry point
  * @argc: number of arguments
- * @argv: array of arguments
+ * @argv: array containing arguments
  *
  * Return: 0 (Success), 1 (Error)
  */
 int main(int argc, char *argv[])
 {
 	int count;
-	int num;
+	int str_to_int;
 	int sum = 0;
 
-	if (argc < 1)
+	count = 1;
+	while (count < argc)
 	{
-		printf("0\n");
-		return (0);
-	}
-
-	for (count = 1; count < argc; count++)
-	{
-		if (!check_if_digits(argv[count]))
+		if (check_num(argv[count]))
+		{
+			str_to_int = atoi(argv[count]);
+			sum += str_to_int;
+		}
+		else
 		{
 			printf("Error\n");
 			return (1);
 		}
-
-		num = atoi(argv[count]);
-		sum += num;
+		count++;
 	}
+
 	printf("%d\n", sum);
 	return (0);
 }
